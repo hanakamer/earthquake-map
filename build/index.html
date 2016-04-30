@@ -5,9 +5,23 @@
     <title></title>
   </head>
   <body>
-    <div class="map"></div>
-    <input type="text" name="name" value="" id="showdate">
-    <div id="slider"></div>
+    <div class="container">
+
+      <h1 class="title">
+        Timeline of Earthquakes in Turkey
+      </h1>
+      <div class="number">
+        <input type="text" name="number"  id="shownum" readonly>
+      </div>
+      <div class="map"></div>
+
+      <div id="play"></div>
+      <div class="showdate-container">
+        <input type="text" name="name" id="showdate" readonly>
+      </div>
+      <div id="slider"></div>
+
+    </div>
     <script src="./bundle.js"></script>
   </body>
 </html>
