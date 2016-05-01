@@ -45,6 +45,7 @@ const addEathquake = function(data) {
       .data(data).enter()
       .append("circle")
       .attr("cx", function(d) {
+        console.log(d);
         return projection([d.Boylam, d.Enlem])[0]
       })
       .attr("cy", function(d) {
@@ -58,18 +59,18 @@ const addEathquake = function(data) {
       .transition()
       .attr("r", '0')
       .attr('stroke-width', 0)
-      .duration(800)
+      .duration(1000)
       .remove()
 }
 
 const parseDate = d3.time.format("%Y-%m-%d").parse;
 const formatDate = d3.time.format("%b-%Y");
 const timeScale = d3.time.scale()
-                        .domain([new Date('1900-01-01'), new Date('2016-01-01')])
-                        .range([0, 42356])
+                        .domain([new Date('1980-01-01'), new Date('2016-01-01')])
+                        .range([0, 13149])
                         .clamp(true);
 
-const startValue = timeScale(new Date('1900-01-01'));
+const startValue = timeScale(new Date('1980-01-01'));
 const endValue =  timeScale(new Date('2016-01-01'));
 
 const formatDigit = function(mydate) {
@@ -164,7 +165,7 @@ const button = $( "#play" ).button({
        });
        playInterval = setInterval(function () {
            currentTime = currentTime + 1;
-           if (currentTime > 3659558400) {
+           if (currentTime > 1136073600) {
                if (autoRewind) {
                    currentTime = 0;
                }
